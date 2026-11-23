@@ -1,0 +1,5 @@
+const steps = ['Session details', 'Video upload', 'Select bowler', 'Track bowler', 'Review video'];
+
+export function WorkflowProgress({ current }: { current: number }) {
+  return <nav aria-label="Session creation progress" className="mb-6 rounded-2xl border border-surface-700 bg-surface-800/50 p-3 sm:p-4"><ol className="grid grid-cols-5 gap-1 sm:gap-2">{steps.map((label, index) => { const number = index + 1; const complete = number < current; const active = number === current; return <li key={label} className="min-w-0"><div className="flex flex-col items-center gap-1.5 text-center sm:flex-row sm:gap-2 sm:text-left"><span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold ${active ? 'bg-brand-500 text-white' : complete ? 'bg-brand-500/20 text-brand-300' : 'bg-surface-700 text-text-muted'}`}>{complete ? '✓' : number}</span><span className={`text-[10px] leading-tight sm:text-xs ${active ? 'font-semibold text-text-primary' : 'text-text-muted'}`}>{label}</span></div><div className={`mt-2 h-1 rounded-full ${complete || active ? 'bg-brand-500/70' : 'bg-surface-700'}`} /></li>; })}</ol></nav>;
+}
