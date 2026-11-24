@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://cricket-bowling-backend.onrender.com/:path*"
+      "destination": "https://cricket-bowling-backend.onrender.com/api/:path*"
     },
     {
       "source": "/(.*)",
